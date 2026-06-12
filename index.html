@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager & Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Task Manager & Scheduler</h1>
+            <p>Organize your tasks and manage appointments efficiently</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="todo">ToDo List</button>
+            <button class="nav-tab" data-tab="scheduler">Appointment Scheduler</button>
+        </div>
+
+        <!-- App Container -->
+        <div class="app-container">
+            <!-- ToDo App -->
+            <div id="todo" class="app-section active">
+                <div class="todo-header">
+                    <h2>TODO LIST</h2>
+                    <p>Stay organized and productive</p>
+                </div>
+
+                <div class="todo-input-group">
+                    <input type="text" class="todo-input" placeholder="Add new task..." maxlength="100">
+                    <button class="add-btn">ADD</button>
+                </div>
+
+                <div class="todo-list">
+                    <div class="todo-item">
+                        <span class="todo-text">Complete project documentation</span>
+                        <div class="todo-actions">
+                            <button class="btn-small edit-btn">Edit</button>
+                            <button class="btn-small delete-btn">Delete</button>
+                        </div>
+                    </div>
+                    <div class="todo-item">
+                        <span class="todo-text">Review code changes</span>
+                        <div class="todo-actions">
+                            <button class="btn-small edit-btn">Edit</button>
+                            <button class="btn-small delete-btn">Delete</button>
+                        </div>
+                    </div>
+                    <div class="todo-item">
+                        <span class="todo-text">Prepare presentation slides</span>
+                        <div class="todo-actions">
+                            <button class="btn-small edit-btn">Edit</button>
+                            <button class="btn-small delete-btn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appointment Scheduler -->
+            <div id="scheduler" class="app-section">
+                <div class="scheduler-header">
+                    <h2>APPOINTMENT SCHEDULER</h2>
+                    <p>Manage your appointments and schedule efficiently</p>
+                </div>
+
+                <!-- Authentication -->
+                <div class="auth-section">
+                    <div class="auth-card">
+                        <div class="auth-form">
+                            <h3>Login or Register</h3>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Username" id="username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" placeholder="Password" id="password">
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn-primary" id="loginBtn">Login</button>
+                                <button class="btn-secondary" id="registerBtn">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scheduler Content (hidden initially) -->
+                <div class="scheduler-content">
+                    <div class="user-welcome">
+                        <div>
+                            <h3 id="welcomeText">Welcome back!</h3>
+                            <p>Manage your appointments below</p>
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">Logout</button>
+                    </div>
+
+                    <!-- Appointment Form -->
+                    <div class="appointment-form">
+                        <h3 style="margin-bottom: 25px; color: #2c3e50;">Schedule New Appointment</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Appointment Title" id="appointmentTitle">
+                        </div>
+                        <div class="form-row">
+                            <input type="date" class="form-input" id="appointmentDate">
+                            <input type="time" class="form-input" id="appointmentTime">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="Additional notes (optional)" id="appointmentNotes"></textarea>
+                        </div>
+                        <button class="btn-primary" id="scheduleBtn" style="width: 100%;">Schedule Appointment</button>
+                    </div>
+
+                    <!-- Appointments List -->
+                    <div class="appointments-section">
+                        <h3 style="margin-bottom: 25px; color: #2c3e50;">Your Appointments</h3>
+                        <div class="appointments-list">
+                            <div class="empty-state">
+                                <h3>No appointments scheduled</h3>
+                                <p>Schedule your first appointment above</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="todo.js"></script>
+    <script src="appointment.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
